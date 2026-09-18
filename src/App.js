@@ -16,8 +16,11 @@ import Pets from './Ex4/Pets';
 import Players from './Players';
 */
 
-//Exercise 6
-import Main from './Ex6/Main';
+/* //Exercise 6
+import Main from './Ex6/Main';*/
+
+//Exercise 7
+import Layout from './Ex7/Layout';
 
 function App() {
   /*
@@ -60,11 +63,19 @@ function App() {
     </div>
   )*/
 
-  //Exercise 6
+  /*//Exercise 6
   return (
     <div>
       <Navigation />
       <Main />
+      <Footer />
+    </div>
+  )*/
+
+  //Exercise 7
+  return (
+    <div>
+      <Layout />
       <Footer />
     </div>
   )
