@@ -1,4 +1,6 @@
 import './App.css';
+import Footer from './Ex4/Footer';
+import Navigation from './Navigation';
 
 /*
 import MyProfile, { MySubjects } from './BaseComponent/MyProfile';
@@ -7,12 +9,16 @@ import logo1 from './BaseComponent/test.png'
 import BaseUseState from './StateHook/BaseUseState';*/
 
 /* //Exercise 4
-import Footer from './Ex4/Footer';
 import Pets from './Ex4/Pets';
-import Navigation from './Navigation';*/
+*/
 
-//Exercise 5
+/* //Exercise 5
 import Players from './Players';
+*/
+
+//Exercise 6
+import Main from './Ex6/Main';
+
 function App() {
   /*
   let key = Math.random()
@@ -45,10 +51,21 @@ function App() {
     </div>
   )*/
 
-  //Exercise 5
-  return(
+  /* //Exercise 5
+  return (
     <div>
-      <Players/>
+      <Navigation />
+      <Players />
+      <Footer />
+    </div>
+  )*/
+
+  //Exercise 6
+  return (
+    <div>
+      <Navigation />
+      <Main />
+      <Footer />
     </div>
   )
 }
