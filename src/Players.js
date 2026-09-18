@@ -1,4 +1,3 @@
-import React from 'react'
 import { PlayerList } from '../src/shared/ListOfPlayers'
 export default function Players() {
     return (

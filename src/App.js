@@ -9,6 +9,7 @@ import BaseUseState from './StateHook/BaseUseState';*/
 import Footer from './Ex4/Footer';
 import Pets from './Ex4/Pets';
 import Navigation from './Navigation';
+import Players from './Players';
 function App() {
   /*
   let key = Math.random()
@@ -37,6 +38,7 @@ function App() {
     <div>
       <Navigation />
       <Pets />
+      <Players/>
       <Footer/>
     </div>
   )
