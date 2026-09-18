@@ -6,9 +6,12 @@ import logo from './BaseComponent/avt.png'
 import logo1 from './BaseComponent/test.png'
 import BaseUseState from './StateHook/BaseUseState';*/
 
+/* //Exercise 4
 import Footer from './Ex4/Footer';
 import Pets from './Ex4/Pets';
-import Navigation from './Navigation';
+import Navigation from './Navigation';*/
+
+//Exercise 5
 import Players from './Players';
 function App() {
   /*
@@ -33,16 +36,21 @@ function App() {
 
   );*/
 
-  //Exercise 4
+  /* //Exercise 4
   return (
     <div>
       <Navigation />
       <Pets />
-      <Players/>
       <Footer/>
     </div>
-  )
+  )*/
 
+  //Exercise 5
+  return(
+    <div>
+      <Players/>
+    </div>
+  )
 }
 
 export default App;
