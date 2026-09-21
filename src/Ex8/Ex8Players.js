@@ -1,6 +1,6 @@
-import { PlayerList } from '../src/shared/ListOfPlayers'
+import { PlayerList } from '../shared/ListOfPlayers'
 import { useState } from 'react'
-export default function Players() {
+export default function EX8Players() {
     const [player, setPlayer] = useState([])
     return (
         <div className='container'>

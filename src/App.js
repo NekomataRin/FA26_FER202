@@ -1,4 +1,5 @@
 import './App.css';
+
 import Footer from './Ex4/Footer';
 import Navigation from './Navigation';
 
@@ -21,6 +22,10 @@ import Main from './Ex6/Main';*/
 
 //Exercise 7
 import Layout from './Ex7/Layout';
+
+//Exercise 8
+import './Ex8/Ex8.css';
+import EX8Players from './Ex8/Ex8Players';
 
 function App() {
   /*
@@ -72,10 +77,19 @@ function App() {
     </div>
   )*/
 
-  //Exercise 7
+  /* //Exercise 7
   return (
     <div>
       <Layout />
+      <Footer />
+    </div>
+  )*/
+
+  //Exercise 8
+  return (
+    <div>
+      <Navigation />
+      <EX8Players />
       <Footer />
     </div>
   )
