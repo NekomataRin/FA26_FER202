@@ -1,5 +1,8 @@
+/**
+ * When you wanted to see exercises, just uncomment it, and make sure to keep the exercise label I put above :v
+ * These not having any comments, PLEASE KEEP IT AS IT BE
+ */
 import './App.css';
-
 import Footer from './Ex4/Footer';
 import Navigation from './Navigation';
 
@@ -20,12 +23,20 @@ import Players from './Players';
 /* //Exercise 6
 import Main from './Ex6/Main';*/
 
-//Exercise 7
-import Layout from './Ex7/Layout';
+/* //Exercise 7
+import Layout from './Ex7/Layout';*/
 
 //Exercise 8
+/*
 import './Ex8/Ex8.css';
-import EX8Players from './Ex8/Ex8Players';
+import EX8Players from './Ex8/Ex8Players';*/
+
+/* //Context Hook
+import ComponentA from './ContextHook/ComponentA';*/
+
+//Base Effect Hook
+import BaseEffectHook from './EffectHook/BaseEffectHook';
+import OnlineStatus from './EffectHook/OnlineStatus';
 
 function App() {
   /*
@@ -85,11 +96,31 @@ function App() {
     </div>
   )*/
 
+  /*
   //Exercise 8
   return (
     <div>
       <Navigation />
       <EX8Players />
+      <Footer />
+    </div>
+  )*/
+
+  //Context Hook
+  /*return (
+    <div>
+      <Navigation />
+      <ComponentA />
+      <Footer />
+    </div>
+  )*/
+
+  //Base Effect Hook
+  return (
+    <div className='App'>
+      <Navigation />
+      {/*<BaseEffectHook />*/}
+      <OnlineStatus/>
       <Footer />
     </div>
   )

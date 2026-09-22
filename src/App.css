@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+.box {
+  border: solid 2px;
+  border-color: yellow;
+  padding: 20px 20px;
+}
+
+.child-component {
+  margin: 30px 30px;
+  border-color: white;
+}
