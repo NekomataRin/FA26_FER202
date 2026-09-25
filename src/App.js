@@ -1,23 +1,19 @@
-import logo from './logo.svg';
+import { useContext } from 'react';
 import './App.css';
+import Banner from './Orchid/components/Banner';
+import Footer from './Orchid/components/Footer';
+import Orchid from './Orchid/components/Orchid';
+import Navigation from './Orchid/utils/Navigation';
+import { ThemeContext } from './Orchid/utils/ThemeContext';
 
 function App() {
+  const { theme } = useContext(ThemeContext)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{ backgroundColor: theme.backgroundColor, color: theme.color, borderColor: theme.borderColor }}>
+      <Banner />
+      <Navigation />
+      <Orchid />
+      <Footer />
     </div>
   );
 }
