@@ -27,16 +27,17 @@ import Main from './Ex6/Main';*/
 import Layout from './Ex7/Layout';*/
 
 //Exercise 8
-/*
 import './Ex8/Ex8.css';
-import EX8Players from './Ex8/Ex8Players';*/
+import EX8Players from './Ex8/Ex8Players';
 
 /* //Context Hook
 import ComponentA from './ContextHook/ComponentA';*/
 
-//Base Effect Hook
+/*//Base Effect Hook
 import BaseEffectHook from './EffectHook/BaseEffectHook';
 import OnlineStatus from './EffectHook/OnlineStatus';
+import { ThemeProvider } from './Ex9/ThemeContext';*/
+import NavigationV3 from './Ex9/Navigation_v3';
 
 function App() {
   /*
@@ -96,15 +97,15 @@ function App() {
     </div>
   )*/
 
-  /*
+  
   //Exercise 8
   return (
     <div>
-      <Navigation />
+      <NavigationV3 />
       <EX8Players />
       <Footer />
     </div>
-  )*/
+  )
 
   //Context Hook
   /*return (
@@ -116,14 +117,18 @@ function App() {
   )*/
 
   //Base Effect Hook
-  return (
-    <div className='App'>
-      <Navigation />
-      {/*<BaseEffectHook />*/}
-      <OnlineStatus/>
-      <Footer />
-    </div>
-  )
+  //return (
+  //  <div className='App'>
+  //    <Navigation />*/
+  //    {/*<BaseEffectHook />*/}
+  //    (<OnlineStatus/>
+  //    <Footer />
+  //  </div>
+  //)
+
+  //Exercise 9
+
+
 }
 
 export default App;
