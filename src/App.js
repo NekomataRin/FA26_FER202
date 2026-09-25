@@ -3,6 +3,7 @@
  * These not having any comments, PLEASE KEEP IT AS IT BE
  */
 import './App.css';
+import DataFetching from './Ex10/DataFeching';
 import Footer from './Ex4/Footer';
 import Navigation from './Navigation';
 
@@ -27,8 +28,9 @@ import Main from './Ex6/Main';*/
 import Layout from './Ex7/Layout';*/
 
 //Exercise 8
+/*
 import './Ex8/Ex8.css';
-import EX8Players from './Ex8/Ex8Players';
+import EX8Players from './Ex8/Ex8Players';*/
 
 /* //Context Hook
 import ComponentA from './ContextHook/ComponentA';*/
@@ -37,7 +39,7 @@ import ComponentA from './ContextHook/ComponentA';*/
 import BaseEffectHook from './EffectHook/BaseEffectHook';
 import OnlineStatus from './EffectHook/OnlineStatus';
 import { ThemeProvider } from './Ex9/ThemeContext';*/
-import NavigationV3 from './Ex9/Navigation_v3';
+//import NavigationV3 from './Ex9/Navigation_v3';
 
 function App() {
   /*
@@ -97,15 +99,15 @@ function App() {
     </div>
   )*/
 
-  
+
   //Exercise 8
-  return (
+  /*return (
     <div>
       <NavigationV3 />
       <EX8Players />
       <Footer />
     </div>
-  )
+  )*/
 
   //Context Hook
   /*return (
@@ -126,8 +128,14 @@ function App() {
   //  </div>
   //)
 
-  //Exercise 9
-
+  //Exercise 10
+  return (
+    <div>
+      <Navigation />
+      <DataFetching />
+      <Footer />
+    </div>
+  )
 
 }
 
