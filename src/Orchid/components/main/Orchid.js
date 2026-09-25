@@ -15,7 +15,7 @@ export default function Orchid() {
             <div className="container" style={{ backgroundColor: theme.backgroundColor, color: theme.color, borderColor: theme.borderColor }}>
                 <h1>Please Login To View The Content</h1>
                 <p>It really does feel empty out here...</p>
-                <img class="loginImg" src={loginimg} alt="Typhoeus Wallpaper by 小皮不皮er"/>
+                <img class="loginImg" src={loginimg} alt="Typhoeus Wallpaper by 小皮不皮er" />
                 <p>Not really... I guess... Image credits to <strong>小皮不皮er</strong></p>
                 <hr />
             </div>
@@ -46,6 +46,7 @@ export default function Orchid() {
                         <img src={orchid.image} alt={orchid.name} />
                         <a className='close' href='#'>&times;</a>
                         <div className='content' style={{ backgroundColor: theme.backgroundColor, color: theme.color, borderColor: theme.borderColor }}>
+                            <hr />
                             <h3>{orchid.name}</h3>
                             <hr />
                             <p><strong>Category:</strong> {orchid.category}</p>

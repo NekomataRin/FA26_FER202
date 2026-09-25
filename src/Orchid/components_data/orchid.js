@@ -1,7 +1,7 @@
 export const orchidData = [
     {
         Id: '1',
-        name: 'Taichung beauty',
+        name: 'Taichung Beauty',
         rating: 5,
         isSpecial: true,
         image: '/assets/images/or01.png',
