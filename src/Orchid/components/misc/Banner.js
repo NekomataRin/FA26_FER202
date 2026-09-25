@@ -1,6 +1,6 @@
 import { useContext } from 'react'
-import banner from '../img/misc/banner.png'
-import { ThemeContext } from '../utils/ThemeContext'
+import banner from '../../img/misc/banner.png'
+import { ThemeContext } from '../../utils/ThemeContext'
 
 export default function Banner() {
     const { theme } = useContext(ThemeContext)

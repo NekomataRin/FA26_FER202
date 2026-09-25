@@ -29,6 +29,7 @@
   aspect-ratio: 2 / 1;
   object-fit: cover;
   width: 100%;
+  border-radius: 10px;
 }
 
 .popup h2 {
@@ -49,7 +50,7 @@
 }
 
 .popup .close:hover {
-  color: #06D85F;
+  color: violet;
 }
 
 .popup .content {
@@ -62,10 +63,19 @@
   padding: 10px 10px;
   aspect-ratio: 2 / 1;
   object-fit: cover;
+  border-radius: 15px;
   width: 100%;
 }
 
 .card-body button {
   object-fit: cover;
   width: 100%;
+}
+
+.loginImg {
+  margin: auto;
+  object-fit: cover;
+  padding: 10px 10px;
+  border-radius: 3%;
+  width: 70%;
 }

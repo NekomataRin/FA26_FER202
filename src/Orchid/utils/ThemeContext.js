@@ -1,13 +1,13 @@
 import React from 'react'
-import { useState,  useEffect } from 'react'
+import { useState, useEffect } from 'react'
 const themes = {
   dark: {
     backgroundColor: '#1f1e33',
     color: 'white',
-    borderColor: 'white'
+    borderColor: '#e9d4ff'
   },
   light: {
-    backgroundColor: 'white',
+    backgroundColor: '#e9d4ff',
     color: 'black',
     borderColor: '#1f1e33'
   }
@@ -15,16 +15,16 @@ const themes = {
 const initialState = {
   dark: false,
   theme: themes.light,
-  toggle: () => {}
+  toggle: () => { }
 }
 const ThemeContext = React.createContext(initialState)
 
 function ThemeProvider({ children }) {
-  const [dark, setDark] = useState(false) 
+  const [dark, setDark] = useState(false)
   // On mount, read the preferred theme from the persistence
   useEffect(() => {
     const isDark = localStorage.getItem('dark') === 'true'
-//store the state mode to the local storage
+    //store the state mode to the local storage
     setDark(isDark)
   }, [dark])
   // To toggle between dark and light modes
