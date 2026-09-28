@@ -1,6 +1,6 @@
 # FER202 - Lab Project
 ---
-Last commited: `Sep 29, 2026` at `06:47`
+Last commited: `Sep 29, 2026` at `06:49`
 
 Commited by: `ArichiAya` (Prefered not to show my real name here on GitHub) - `SE201444`
 
@@ -21,10 +21,10 @@ Commited by: `ArichiAya` (Prefered not to show my real name here on GitHub) - `S
 
 ---
 
-### Changelog
+### Changelogs
 
-#### `Sep 28, 2026`
-- `[06:48]` - Remove some misc files in `./public` folder, and edited some things... so this is actually a misc thing
+#### `Sep 29, 2026`
+- `[06:49]` - Remove some misc files in `./public` folder, and edited some things... so this is actually a misc thing
 
 #### `Sep 28, 2026`
 - `[16:20]` - Updated the popup text alignment for `./src/Orchid/components/main/Orchid.js` for a better visual
