@@ -1,6 +1,6 @@
 # FER202 - Lab Project
 ---
-Last commited: `Sep 28, 2026` at `15:20`
+Last commited: `Sep 28, 2026` at `15:23`
 
 Commited by: `ArichiAya` (Prefered not to show my real name here on GitHub) - `SE201444`
 
@@ -24,6 +24,7 @@ Commited by: `ArichiAya` (Prefered not to show my real name here on GitHub) - `S
 ### Changelog
 
 #### `Sep 28, 2026`
+- `[15:23]` - Fix a typo on `README.md` on `Changelog`
 - `[15:16]` - Rename `./src/Orchid/components/comonents_data/orchid.js` to `./src/Orchid/components/comonents_data/ListOfOrchids.js`for `Lab 3` requirement.
 
 
