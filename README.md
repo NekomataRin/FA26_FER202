@@ -24,7 +24,7 @@ Commited by: `ArichiAya` (Prefered not to show my real name here on GitHub) - `S
 ### Changelog
 
 #### `Sep 28, 2026`
-- `[15:16]` - Rename `./src/components/comonents_data/orchid.js` to `./src/components/comonents_data/ListOfOrchids.js`for `Lab 3` requirement.
+- `[15:16]` - Rename `./src/Orchid/components/comonents_data/orchid.js` to `./src/Orchid/components/comonents_data/ListOfOrchids.js`for `Lab 3` requirement.
 
 
 #### `Sep 25, 2026`
