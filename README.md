@@ -1,6 +1,6 @@
 # FER202 - Lab Project
 ---
-Last commited: `Sep 28, 2026` at `15:30`
+Last commited: `Sep 28, 2026` at `16:20`
 
 Commited by: `ArichiAya` (Prefered not to show my real name here on GitHub) - `SE201444`
 
@@ -24,7 +24,8 @@ Commited by: `ArichiAya` (Prefered not to show my real name here on GitHub) - `S
 ### Changelog
 
 #### `Sep 28, 2026`
-- `[15:30]` - Updated `README.md` for the visual, so this is actually a misc thing.
+- `[16:20]` - Updated the popup text alignment for `./src/Orchid/components/main/Orchid.js` for a better visual
+- `[15:30]` - Updated `README.md` for the visual, so this is actually a misc thing
 - `[15:23]` - Fix a typo on `README.md` on `Changelog`
 - `[15:16]` - Rename `./src/Orchid/components/comonents_data/orchid.js` to `./src/Orchid/components/comonents_data/ListOfOrchids.js`for `Lab 3` requirement.
 

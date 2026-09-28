@@ -49,10 +49,12 @@ export default function Orchid() {
                             <hr />
                             <h3>{orchid.name}</h3>
                             <hr />
-                            <p><strong>Category:</strong> {orchid.category}</p>
-                            <p><strong>Rating:</strong> {orchid.rating}★</p>
-                            <p><strong>Color:</strong> {orchid.color}</p>
-                            <p><strong>Origin:</strong> {orchid.origin}</p>
+                            <p style={{ textAlign: 'left', marginLeft: '25px' }}>
+                                {"> "} <strong>Category:</strong> {orchid.category} <br />
+                                {"> "} <strong>Rating:</strong> {orchid.rating}★ <br />
+                                {"> "} <strong>Color:</strong> {orchid.color} <br />
+                                {"> "} <strong>Origin:</strong> {orchid.origin}
+                            </p>
                         </div>
                     </div>
                 </div>
