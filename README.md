@@ -1,6 +1,6 @@
 # FER202 - Lab Project
 ---
-Last commited: `Sep 28, 2026` at `16:20`
+Last commited: `Sep 29, 2026` at `06:47`
 
 Commited by: `ArichiAya` (Prefered not to show my real name here on GitHub) - `SE201444`
 
@@ -24,6 +24,9 @@ Commited by: `ArichiAya` (Prefered not to show my real name here on GitHub) - `S
 ### Changelog
 
 #### `Sep 28, 2026`
+- `[06:48]` - Remove some misc files in `./public` folder, and edited some things... so this is actually a misc thing
+
+#### `Sep 28, 2026`
 - `[16:20]` - Updated the popup text alignment for `./src/Orchid/components/main/Orchid.js` for a better visual
 - `[15:30]` - Updated `README.md` for the visual, so this is actually a misc thing
 - `[15:23]` - Fix a typo on `README.md` on `Changelog`
@@ -40,7 +43,7 @@ Commited by: `ArichiAya` (Prefered not to show my real name here on GitHub) - `S
 
 ---
 
-![Typhoeus by by 小皮不皮er](./src/Orchid/img/misc/loginimg.png)
+![Typhoeus by 小皮不皮er](./src/Orchid/img/misc/loginimg.png)
 
 ※The image here shown as the main theme for this Lab Project.
 

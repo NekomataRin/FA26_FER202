@@ -41,7 +41,7 @@ export default function Navigation() {
                         </li>
                     </ul>
                 </div>
-                <div> {/* Bruh, spagetti code momento :v*/}
+                <div style={{ position: 'relative' }}> {/* Bruh, spagetti code momento :v*/}
                     {
                         !username ?
                             <>
