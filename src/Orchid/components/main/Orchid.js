@@ -1,5 +1,5 @@
 import { useState, useContext } from "react"
-import { orchidData } from "../../components_data/orchid"
+import { orchidData } from "../../components_data/ListOfOrchids"
 import '../../utils/orchid.css'
 import { ThemeContext } from "../../utils/ThemeContext"
 import AuthContext from "../../utils/AuthContext"
