@@ -21,7 +21,7 @@ Commited by: `ArichiAya` (Prefered not to show my real name here on GitHub) - `S
 
 ---
 
-### Changelogs
+## Changelogs
 
 #### `Sep 29, 2026`
 - `[07:07]` - Rename the directory for `./src/Orchid/components/img` and `./src/Orchid/components/utils` to `./src/Orchid/components/components_img` and `./src/Orchid/components/components_utils` for the uniformity of the whole project
