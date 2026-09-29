@@ -5,12 +5,12 @@ import AuthContext from "../../components_utils/AuthContext"
 import loginimg from "../../components_img/misc/loginimg.png"
 import OrchidPresentation from "./OrchidPresentation"
 
-export default function Orchid() {
-   
-
+export default function Orchid() {   
     const { theme } = useContext(ThemeContext)
-    const { username } = useContext(AuthContext)
-    return (!username) ? (
+    const { user } = useContext(AuthContext)
+
+    console.log(user)
+    return (!user) ? (
         <>
             <div className="container" style={{ backgroundColor: theme.backgroundColor, color: theme.color, borderColor: theme.borderColor }}>
                 <h1>Please Login To View The Content</h1>

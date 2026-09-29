@@ -5,7 +5,7 @@ import AuthContext from "./AuthContext"
 
 export default function Navigation() {
     const { theme, toggle, dark } = useContext(ThemeContext)
-    const { username, login, logout } = useContext(AuthContext)
+    const { username, user, userToggle } = useContext(AuthContext)
 
     return (
         <div>
@@ -43,15 +43,15 @@ export default function Navigation() {
                 </div>
                 <div style={{ position: 'relative' }}> {/* Bruh, spagetti code momento :v*/}
                     {
-                        !username ?
+                        !user ?
                             <>
                                 <p>Login as <strong>Typhoeus</strong></p>
-                                <button className="btn btn-primary" onClick={() => login("Typhoeus")}><strong>Login</strong></button>
+                                <button className="btn btn-primary login" onClick={() => userToggle("Typhoeus")}><strong>Login</strong></button>
                             </>
                             :
                             <>
                                 <p>Welcome to <strong>OrchidLab</strong>, <strong>{username}</strong></p>
-                                <button className="btn btn-secondary" onClick={() => logout()}><strong>Logout</strong></button>
+                                <button className="btn btn-secondary logout" onClick={() => userToggle("")}><strong>Logout</strong></button>
                             </>
                     }
                 </div>
