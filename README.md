@@ -44,7 +44,7 @@ Commited by: `ArichiAya` (Prefered not to show my real name here on GitHub) - `S
 
 ---
 
-![Typhoeus by 小皮不皮er](./src/Orchid/img/misc/loginimg.png)
+![Typhoeus by 小皮不皮er](./src/Orchid/components_img/misc/loginimg.png)
 
 ※The image here shown as the main theme for this Lab Project.
 
