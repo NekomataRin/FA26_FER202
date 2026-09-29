@@ -7,15 +7,15 @@ Commited by: `ArichiAya` (Prefered not to show my real name here on GitHub) - `S
 ---
 
 ## **Lab Status**
-### > `Lab 1` 
+> ### `Lab 1` 
 
 [━━━━━━━━━━] **100%** 
 
-### > `Lab 2` 
+> ### `Lab 2` 
 
 [━━━━━━━━━━] **100%**
 
-### > `Lab 3` 
+> ### `Lab 3` 
 
 [━━━━━━━━━━] **100%**
 
