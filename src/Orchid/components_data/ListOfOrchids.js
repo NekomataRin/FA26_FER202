@@ -137,7 +137,7 @@ export const orchidData = [
         image: '/assets/images/or14.png',
         color: 'yellow',
         origin: 'Myanmar, Thailand, Indonesia',
-        category: 'Ludisia'
+        category: 'Bulbophyllum'
     },
     {
         Id: '15',

@@ -1,8 +1,8 @@
 import { useContext } from 'react';
 import './App.css';
-import Banner from './Orchid/components/misc/Banner';
-import Footer from './Orchid/components/misc/Footer';
-import Orchid from './Orchid/components/main/Orchid';
+import Banner from './Orchid/components_main/misc/Banner';
+import Footer from './Orchid/components_main/misc/Footer';
+import OrchidContainer from './Orchid/components_main/main/OrchidContainer';
 import Navigation from './Orchid/components_utils/Navigation';
 import { ThemeContext } from './Orchid/components_utils/ThemeContext';
 import AuthProvider from './Orchid/components_utils/AuthProvider';
@@ -14,7 +14,7 @@ function App() {
       <Banner />
       <AuthProvider>
         <Navigation />
-        <Orchid />
+        <OrchidContainer />
       </AuthProvider>
       <Footer />
     </div>
