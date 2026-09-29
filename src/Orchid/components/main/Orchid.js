@@ -1,9 +1,9 @@
 import { useState, useContext } from "react"
 import { orchidData } from "../../components_data/ListOfOrchids"
-import '../../utils/orchid.css'
-import { ThemeContext } from "../../utils/ThemeContext"
-import AuthContext from "../../utils/AuthContext"
-import loginimg from "../../img/misc/loginimg.png"
+import '../../components_utils/orchid.css'
+import { ThemeContext } from "../../components_utils/ThemeContext"
+import AuthContext from "../../components_utils/AuthContext"
+import loginimg from "../../components_img/misc/loginimg.png"
 
 export default function Orchid() {
     const [orchid, setOrchid] = useState([])

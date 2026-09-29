@@ -3,9 +3,9 @@ import './App.css';
 import Banner from './Orchid/components/misc/Banner';
 import Footer from './Orchid/components/misc/Footer';
 import Orchid from './Orchid/components/main/Orchid';
-import Navigation from './Orchid/utils/Navigation';
-import { ThemeContext } from './Orchid/utils/ThemeContext';
-import AuthProvider from './Orchid/utils/AuthProvider';
+import Navigation from './Orchid/components_utils/Navigation';
+import { ThemeContext } from './Orchid/components_utils/ThemeContext';
+import AuthProvider from './Orchid/components_utils/AuthProvider';
 
 function App() {
   const { theme } = useContext(ThemeContext)

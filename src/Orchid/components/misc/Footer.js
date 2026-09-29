@@ -1,6 +1,6 @@
 import { useContext } from 'react'
-import footerIcon from '../../img/misc/typhokek.gif'
-import { ThemeContext } from '../../utils/ThemeContext'
+import footerIcon from '../../components_img/misc/typhokek.gif'
+import { ThemeContext } from '../../components_utils/ThemeContext'
 export default function Footer() {
     const { theme } = useContext(ThemeContext)
     return (

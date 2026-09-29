@@ -1,6 +1,6 @@
 # FER202 - Lab Project
 ---
-Last commited: `Sep 29, 2026` at `06:49`
+Last commited: `Sep 29, 2026` at `07:07`
 
 Commited by: `ArichiAya` (Prefered not to show my real name here on GitHub) - `SE201444`
 
@@ -24,6 +24,7 @@ Commited by: `ArichiAya` (Prefered not to show my real name here on GitHub) - `S
 ### Changelogs
 
 #### `Sep 29, 2026`
+- `[07:07]` - Rename the directory for `./src/Orchid/components/img` and `./src/Orchid/components/utils` to `./src/Orchid/components/components_img` and `./src/Orchid/components/components_utils` for the uniformity of the whole project
 - `[06:49]` - Remove some misc files in `./public` folder, and edited some things... so this is actually a misc thing
 
 #### `Sep 28, 2026`
