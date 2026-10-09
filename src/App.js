@@ -3,9 +3,10 @@
  * These not having any comments, PLEASE KEEP IT AS IT BE
  */
 import './App.css';
-import DataFetching from './Ex10/DataFeching';
+
 import Footer from './Ex4/Footer';
 import Navigation from './Navigation';
+
 
 /*
 import MyProfile, { MySubjects } from './BaseComponent/MyProfile';
@@ -40,6 +41,16 @@ import BaseEffectHook from './EffectHook/BaseEffectHook';
 import OnlineStatus from './EffectHook/OnlineStatus';
 import { ThemeProvider } from './Ex9/ThemeContext';*/
 //import NavigationV3 from './Ex9/Navigation_v3';
+
+//Exercise 12
+/*
+import DataFetching from './Ex10/DataFeching';
+import Contact from './Ex12/Contact'; 
+*/
+
+//Reducer Hook
+import BaseReducer from './ReducerHook/BaseReducer';
+import ShoppingCart from './ReducerHook/ShoppingCart';
 
 function App() {
   /*
@@ -129,14 +140,32 @@ function App() {
   //)
 
   //Exercise 10
-  return (
+  /*return (
     <div>
       <Navigation />
       <DataFetching />
       <Footer />
     </div>
-  )
+  )*/
 
+  //Exercise 12
+  /*return (
+    <div>
+      <Navigation />
+      <Contact />
+      <Footer />
+    </div>
+  )*/
+
+  //Reducer Hook / Base Reducer
+  return (
+    <div>
+      <Navigation />
+      {/*<BaseReducer />*/}
+      <ShoppingCart />
+      <Footer />
+    </div>
+  )
 }
 
 export default App;
