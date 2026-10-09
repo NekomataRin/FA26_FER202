@@ -16,26 +16,31 @@ export default function ShoppingCart() {
     }
 
     const initialState = {
-        item: [],
+        item: { item1: 0, item2: 0 },
         totalQuantity: 0,
         totalPrice: 0
     }
 
-    const [sCart, dispatch] = useReducer(reducer, { item: [], totalQuantity: 0, totalPrice: 0 })
+    const [sCart, dispatch] = useReducer(reducer, { item: {}, totalQuantity: 0, totalPrice: 0 })
     function reducer(state, action) {
         const typeList = ["add_item"]
         const typeIndex = typeList.indexOf(action.type)
 
         let tempState = {}
-  
+
         switch (typeIndex) {
             case 0:
                 {
-                    tempState = {
-                        item: [...state.item, action.payload.item],
-                        totalQuantity: state.totalQuantity + 1,
-                        totalPrice: state.totalPrice + action.payload.value
-                    }
+
+                    let tempItem = {
+                        item1: state.item.item1 += (state.payload.item === 'item1') ? 1 : 0,
+                        item2: state.item.item2 += (state.payload.item === 'item2') ? 1 : 0
+                    },
+                        tempState = {
+                            item: tempItem,
+                            totalQuantity: state.totalQuantity + 1,
+                            totalPrice: state.totalPrice + action.payload.value
+                        }
                     return tempState
                 }
             default: {
@@ -48,9 +53,9 @@ export default function ShoppingCart() {
             <h1>Reducer Hook (Test)</h1>
             <h3>Product List:</h3>
             <>
-                <button onClick={() => dispatch({ type: "add_item", payload: {item: "item1", value: itemValues.item1 }})}>Item 1 - Price: $5</button>
+                <button onClick={() => dispatch({ type: "add_item", payload: { item: "item1", value: itemValues.item1 } })}>Item 1 - Price: $5</button>
                 <br />
-                <button onClick={() => dispatch({ type: "add_item", payload: {item: "item2", value: itemValues.item2} })}>Item 2 - Price: $10</button>
+                <button onClick={() => dispatch({ type: "add_item", payload: { item: "item2", value: itemValues.item2 } })}>Item 2 - Price: $10</button>
             </>
             <h3>Shopping Cart</h3>
             <ul>
