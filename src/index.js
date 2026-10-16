@@ -4,13 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from './Ex9/ThemeContext';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ThemeProvider> {/*Exercise 9*/}
-      <App />         {/* For Exercises Only */}
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider> {/*Exercise 9*/}
+        <App />         {/* For Exercises Only */}
+      </ThemeProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

@@ -3,9 +3,13 @@
  * These not having any comments, PLEASE KEEP IT AS IT BE
  */
 import './App.css';
+import Contact from './Ex11/Contact';
+import PlayerDetails from './Ex11/PlayerDetails';
+import PlayerRoute from './Ex11/PlayerRoute';
 
 import Footer from './Ex4/Footer';
 import Navigation from './Navigation';
+import { Routes, Route } from 'react-router-dom';
 
 
 /*
@@ -49,8 +53,9 @@ import Contact from './Ex12/Contact';
 */
 
 //Reducer Hook
+/*
 import BaseReducer from './ReducerHook/BaseReducer';
-import ShoppingCart from './ReducerHook/ShoppingCart';
+import ShoppingCart from './ReducerHook/ShoppingCart';*/
 
 function App() {
   /*
@@ -158,14 +163,28 @@ function App() {
   )*/
 
   //Reducer Hook / Base Reducer
+  /*
   return (
     <div>
       <Navigation />
-      {/*<BaseReducer />*/}
       <ShoppingCart />
       <Footer />
     </div>
+  )*/
+
+  //Exercise 11
+  return (
+    <div>
+      <Navigation />
+      <Routes>
+        <Route path='/' element={<PlayerRoute />}></Route>
+        <Route path='/detail/:id' element={<PlayerDetails />}></Route>
+        <Route path='/contact' element={<Contact />}></Route>
+      </Routes>
+      <Footer />
+    </div>
   )
+
 }
 
 export default App;
