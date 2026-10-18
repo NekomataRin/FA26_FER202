@@ -1,43 +1,50 @@
 import { useContext } from "react"
 import { ThemeContext } from "./ThemeContext"
 import AuthContext from "./AuthContext"
+import { Link, useLocation } from 'react-router-dom'
 
 
 export default function Navigation() {
     const { theme, toggle, dark } = useContext(ThemeContext)
     const { username, user, userToggle } = useContext(AuthContext)
-
+    const location = useLocation()
+    const brand = location.pathname.startsWith('/lab4') ? 'OrchidLab - Lab 4' : 'OrchidLab'
     return (
         <div>
             <nav class="navbar navbar-expand-lg" style={{ backgroundColor: theme.backgroundColor, color: theme.color }} >
-                <a class="navbar-brand" href="#" style={{
+                <a class="navbar-brand" style={{
                     backgroundColor: theme.backgroundColor,
                     color: theme.color,
                     outline: 'none'
-                }}><strong>OrchidLab</strong></a>
+                }}><strong>{brand}</strong></a>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav" style={{
                         backgroundColor: theme.backgroundColor,
                         color: theme.color,
                         outline: 'none'
                     }}>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#" style={{
-                                color: theme.color,
-                                outline: 'none'
-                            }}>Home <span class="sr-only">(current)</span></a>
+                        <li class="nav-item">
+                            <Link to="/" style={{ textDecoration: 'none' }}>
+                                <a class="nav-link" style={{
+                                    color: theme.color,
+                                    outline: 'none'
+                                }}>Home</a>
+                            </Link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#products" style={{
+                            <a class="nav-link" style={{
                                 color: theme.color,
                                 outline: 'none'
-                            }}>Products</a>
+                            }}>Checkout</a>
+
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#about" style={{
-                                color: theme.color,
-                                outline: 'none'
-                            }}>About</a>
+                            <Link to="/contact" style={{ textDecoration: 'none' }}> {/* This is for Lab 5, not yet created */}
+                                <a class="nav-link" style={{
+                                    color: theme.color,
+                                    outline: 'none'
+                                }}>Contact</a>
+                            </Link>
                         </li>
                     </ul>
                 </div>
@@ -67,7 +74,7 @@ export default function Navigation() {
                     </a>
                 </div>
             </nav>
-            <hr/>
+            <hr />
         </div>
     )
 }

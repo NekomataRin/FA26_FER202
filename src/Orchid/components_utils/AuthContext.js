@@ -1,7 +1,7 @@
 import { createContext } from "react"
 const initialState = {
     username: null,
-    theme: null,
+    user: null,
     userToggle: () => { }
 }
 

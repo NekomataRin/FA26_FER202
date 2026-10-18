@@ -1,6 +1,6 @@
 # FER202 - Lab Project
 ---
-Last commited: `Sep 29, 2026` at `09:25`
+Last commited: `Oct 18, 2026` at `23:38`
 
 Commited by: `ArichiAya` (Prefered not to show my real name here on GitHub) - `SE201444`
 
@@ -19,25 +19,33 @@ Commited by: `ArichiAya` (Prefered not to show my real name here on GitHub) - `S
 
 [━━━━━━━━━━] **100%**
 
+> ### `Lab 4` 
+
+[━━━━━╌╌╌╌╌] **50%**
+
+
+> ### `Lab 5` 
+
+[╌╌╌╌╌╌╌╌╌╌] **0%**
+
 ---
 
 ## Changelogs
-
+#### `Oct 18, 2026`
+- `[23:38]` - Progress on `Lab 4`: `50%` - Since I'm too lazy to make a new project and make a new branch for this, so `Lab 4` can be accessed on the homescreen before login at "Looking for **`Lab 4?`**", something like that
+#### `Oct 16, 2026`
+- `[09:11]` - Initiated the `Routes` for `Lab 4` (since I'm lazy), and `Contact` for `Lab 5`
 #### `Sep 29, 2026`
 - `[09:25]` - Fix the logic for `Login/Logout` by using `useContext` to keep persistence of the login status of user
 - `[07:55]` - Rename the directory for `./src/Orchid/components/` to `./src/Orchid/components_main/` and split `./src/Orchid/components_main/main/Orchid.js` to 2 files: `OrchidContainter.js` and `OrchidPresentation.js`
 - `[07:07]` - Rename the directory for `./src/Orchid/components/img` and `./src/Orchid/components/utils` to `./src/Orchid/components/components_img` and `./src/Orchid/components/components_utils` for the uniformity of the whole project
 - `[06:49]` - Remove some misc files in `./public` folder, and edited some things... so this is actually a misc thing
-
 #### `Sep 28, 2026`
 - `[16:20]` - Updated the popup text alignment for `./src/Orchid/components/main/Orchid.js` for a better visual
 - `[15:30]` - Updated `README.md` for the visual, so this is actually a misc thing
 - `[15:23]` - Fix a typo on `README.md` on `Changelog`
 - `[15:16]` - Rename `./src/Orchid/components/comonents_data/orchid.js` to `./src/Orchid/components/comonents_data/ListOfOrchids.js`for `Lab 3` requirement.
-
-
 #### `Sep 25, 2026`
-
 - `[14:17]` - Complete `Lab 1`, `Lab 2`, `Lab 3` progress v2 commited
 - `[14:13]` - Update this `README.md` for the lab's status (Complete Progress v1)
 - `[14:11]` - `Lab 1`, `Lab 2`, `Lab 3` completed (v1)
