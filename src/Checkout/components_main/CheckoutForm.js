@@ -1,9 +1,10 @@
 import typhLoading from '../components_img/typho-loading.png'
 import { useFormik } from 'formik'
 import { itemList } from '../components_data/itemList'
-import { useReducer, useContext } from 'react'
+import { useReducer, useContext, useState } from 'react'
 import { ThemeContext } from '../../Orchid/components_utils/ThemeContext'
 import '../components_utils/checkout.css'
+import * as Yup from 'yup'
 
 export default function CheckoutForm() {
     const { theme } = useContext(ThemeContext)
@@ -81,12 +82,71 @@ export default function CheckoutForm() {
                 tempState.item[id] = Number.isNaN(n) ? 1 : Math.max(n, 1)
                 break
             }
+            //Reset toàn bộ giỏ hàng
+            case 'clear-cart': {
+                tempState.item = {}
+                break
+            }
             default: {
                 throw Error(`Unknown Type ${action.type}`)
             }
         }
         return { ...tempState, ...calcTotal(tempState.item) }
     }
+
+    //Formik và Yup
+    const [checkOrder, setOrder] = useState(null)
+
+    const checkoutSchema = Yup.object({
+        fullName: Yup.string().trim()
+            .min(3, 'Full name must be at least 3 characters')
+            .required('Full name is required'),
+        email: Yup.string().trim()
+            .email('Invalid email address')
+            .matches(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/, 'Email must have a domain, e.g. name@gmail.com')
+            .required('Email is required'),
+        phone: Yup.string()
+            .matches(/^(0|\+84)[35789]\d{8}$/, 'Invalid phone number (e.g. 0912345678)')
+            .required('Phone is required'),
+        address: Yup.string().trim().required('Address is required'),
+        paymentMethod: Yup.string()
+            .oneOf(['COD', 'Card'], 'Please select a payment method')
+            .required('Payment method is required'),
+        agreeTerms: Yup.boolean().oneOf([true], 'You must agree to the terms'),
+    })
+
+    const textFields = [
+        { name: 'fullName', label: 'Full name', type: 'text' },
+        { name: 'email', label: 'Email', type: 'email' },
+        { name: 'phone', label: 'Phone', type: 'tel' },
+        { name: 'address', label: 'Address', type: 'text' },
+    ]
+
+    const formik = useFormik({
+        initialValues: {
+            fullName: "",
+            email: "",
+            phone: "",
+            address: "",
+            paymentMethod: "",
+            agreeTerms: false
+        },
+        validationSchema: checkoutSchema,
+        onSubmit: (values) => {
+            setOrder({
+                customer: values,
+                items: cartItems.map((p) => ({
+                    id: p.id, name: p.name, price: p.price, quantity: cart.item[p.id],
+                })),
+                totalQuantity: cart.totalQuantity,
+                totalPrice: cart.totalPrice,
+            })
+            dispatch({ type: 'clear-cart' })
+            formik.resetForm()
+        }
+    })
+
+    const hasError = (name) => formik.touched[name] && formik.errors[name]
 
     return (
         <div className="container checkout" style={themeStyle}>
@@ -152,6 +212,88 @@ export default function CheckoutForm() {
                 <p><strong>Total quantity:</strong> {cart.totalQuantity}</p>
                 <p><strong>Total price:</strong> ${cart.totalPrice}</p>
             </div>
+
+            <hr />
+
+            {checkOrder ? (
+                <div className="checkout-confirm">
+                    <h2 style={{ textAlign: 'center' }}>Order confirmation</h2>
+                    <hr />
+                    <h4>Customer info</h4>
+                    <p><strong>Full name:</strong> {checkOrder.customer.fullName}</p>
+                    <p><strong>Email:</strong> {checkOrder.customer.email}</p>
+                    <p><strong>Phone:</strong> {checkOrder.customer.phone}</p>
+                    <p><strong>Address:</strong> {checkOrder.customer.address}</p>
+                    <p><strong>Payment method:</strong> {checkOrder.customer.paymentMethod}</p>
+
+                    <h4>Items</h4>
+                    <div className="row checkout-head">
+                        <div className="col-4">Name</div>
+                        <div className="col-4">Unit price x Quantity</div>
+                        <div className="col-4">Price</div>
+                    </div>
+                    {checkOrder.items.map((item) => (
+                        <div className="row checkout-row" key={item.id}>
+                            <div className="col-4"><strong>{item.name}</strong></div>
+                            <div className="col-4">${item.price} x {item.quantity}</div>
+                            <div className="col-4">${item.price * item.quantity}</div>
+                        </div>
+                    ))}
+
+                    <div className="checkout-summary">
+                        <p><strong>Total quantity:</strong> {checkOrder.totalQuantity}</p>
+                        <p><strong>Total price:</strong> ${checkOrder.totalPrice}</p>
+                    </div>
+
+                    <button className="btn btn-primary" onClick={() => setOrder(null)}>
+                        Place another order
+                    </button>
+                </div>
+            ) : (
+                <form className="checkout-form" onSubmit={formik.handleSubmit} noValidate>
+                    <h2 style={{ textAlign: 'center' }}>Checkout</h2>
+
+                    {textFields.map((f) => (
+                        <div className="mb-3" key={f.name}>
+                            <label htmlFor={f.name} className="form-label"><strong>{f.label}</strong></label>
+                            <input id={f.name} type={f.type}
+                                className={'form-control' + (hasError(f.name) ? ' is-invalid' : '')}
+                                {...formik.getFieldProps(f.name)} />
+                            {hasError(f.name) && <div className="text-danger small">{formik.errors[f.name]}</div>}
+                        </div>
+                    ))}
+
+                    <div className="mb-3">
+                        <strong>Payment method</strong>
+                        <div>
+                            {['COD', 'Card'].map((m) => (
+                                <label className="me-3" key={m}>
+                                    <input type="radio" name="paymentMethod" value={m}
+                                        checked={formik.values.paymentMethod === m}
+                                        onChange={formik.handleChange}
+                                        onBlur={formik.handleBlur} /> {m}
+                                </label>
+                            ))}
+                        </div>
+                        {hasError('paymentMethod') && <div className="text-danger small">{formik.errors.paymentMethod}</div>}
+                    </div>
+
+                    <div className="mb-3">
+                        <label>
+                            <input type="checkbox" name="agreeTerms"
+                                checked={formik.values.agreeTerms}
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur} /> I agree to the terms
+                        </label>
+                        {hasError('agreeTerms') && <div className="text-danger small">{formik.errors.agreeTerms}</div>}
+                    </div>
+
+                    <button type="submit" className={cartItems.length === 0 ? "btn btn-secondary" : "btn btn-primary"} disabled={cartItems.length === 0}>
+                        <strong>Place order</strong>
+                    </button>
+                    {cartItems.length === 0 && <p className="small">Add items to your cart to place an order.</p>}
+                </form>
+            )}
         </div>
     )
 }

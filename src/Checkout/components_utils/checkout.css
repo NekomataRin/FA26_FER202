@@ -33,3 +33,12 @@
     font-weight: bold;
     border-bottom: 2px solid currentColor;
 }
+
+.checkout-form,
+.checkout-confirm {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+    border: 1px solid rgba(128, 128, 128, 0.4);
+    border-radius: 8px;
+}
