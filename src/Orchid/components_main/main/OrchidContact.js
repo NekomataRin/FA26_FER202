@@ -3,7 +3,6 @@ import loginImg from '../../components_img/misc/loginimg.png'
 import { useContext } from "react"
 import AuthContext from "../../components_utils/AuthContext"
 import { ThemeContext } from '../../components_utils/ThemeContext'
-import { Link } from 'react-router-dom'
 
 export default function OrchidContact() {
     const { theme } = useContext(ThemeContext)
@@ -16,7 +15,6 @@ export default function OrchidContact() {
                 <p>It really does feel empty out here...</p>
                 <img class="loginImg" src={loginImg} alt="Typhoeus Wallpaper by 小皮不皮er" />
                 <p>Not really... I guess... Image credits to <strong>小皮不皮er</strong></p>
-                <sub>Looking for <strong><Link to='/lab4' style={{textDecoration: 'none', color: theme.color}}>Lab 4</Link></strong>? I'm just too lazy to seperate it from my GitHub lmao</sub>
                 <hr />
             </div>
         </>

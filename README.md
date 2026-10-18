@@ -1,6 +1,6 @@
 # FER202 - Lab Project
 ---
-> Last commited: `Oct 19, 2026` at `00:10`
+> Last commited: `Oct 19, 2026` at `00:19`
 > Commited by: `ArichiAya` (Prefered not to show my real name here on GitHub) - `SE201444`
 ---
 
@@ -30,6 +30,7 @@
 
 ## Changelogs
 #### `Oct 19, 2026`
+- `[00:19]` - Moved the router for `Lab 4` to `Footer` section... 
 - `[00:11]` - Progress on `Lab 4`: `100%`
 #### `Oct 18, 2026`
 - `[23:38]` - Progress on `Lab 4`: `50%` - Since I'm too lazy to make a new project and make a new branch for this, so `Lab 4` can be accessed on the homescreen before login at "Looking for **`Lab 4?`**", something like that
