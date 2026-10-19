@@ -75,7 +75,6 @@ export default function OrchidContact() {
                     <p><strong>Email:</strong> {contact.customer.email}</p>
                     <p><strong>Phone:</strong> {contact.customer.phone}</p>
                     <p><strong>Address:</strong> {contact.customer.address}</p>
-                    <p><strong>Payment method:</strong> {contact.customer.paymentMethod}</p>
                 </div>
                 <button className="btn btn-primary" onClick={() => setContact(null)}>
                     Submit Other Info
