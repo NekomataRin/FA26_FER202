@@ -84,7 +84,7 @@ export default function CheckoutForm() {
             }
             //Reset toàn bộ giỏ hàng
             case 'clear-cart': {
-                tempState.item = {}
+                tempState.item = initState
                 break
             }
             default: {

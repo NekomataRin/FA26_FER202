@@ -1,6 +1,6 @@
 # FER202 - Lab Project
 ---
-> Last commited: `Oct 19, 2026` at `00:19`
+> Last commited: `Oct 19, 2026` at `16:42`
 
 > Commited by: `ArichiAya` (Prefered not to show my real name here on GitHub) - `SE201444`
 ---
@@ -25,12 +25,13 @@
 
 > ### `Lab 5` 
 
-[╌╌╌╌╌╌╌╌╌╌] **0%**
+[━━━━━╌╌╌╌╌] **50%**
 
 ---
 
 ## Changelogs
 #### `Oct 19, 2026`
+- `[16:42]` - Progress on `Lab 5`: `50%`
 - `[00:19]` - Moved the router for `Lab 4` to `Footer` section... 
 - `[00:11]` - Progress on `Lab 4`: `100%`
 #### `Oct 18, 2026`

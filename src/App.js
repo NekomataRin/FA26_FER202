@@ -9,6 +9,8 @@ import AuthProvider from './Orchid/components_utils/AuthProvider';
 import { Routes, Route } from 'react-router-dom';
 import CheckoutForm from './Checkout/components_main/CheckoutForm';
 import OrchidContact from './Orchid/components_main/main/OrchidContact';
+import OrchidDetails from './Orchid/components_main/main/OrchidDetail';
+import OrchidNaturalPresentation from './Orchid/components_main/main/OrchidNaturalPresentation';
 
 function App() {
   const { theme } = useContext(ThemeContext)
@@ -19,9 +21,10 @@ function App() {
         <Navigation />
         <Routes>
           <Route path='/' element={<OrchidContainer />}></Route>
-          { /*<Route path='/lab4' element={<OrchidContainer />}></Route> Lab 4, since I'm too lazy to create ANOTHER BRANCH for this */}
-          <Route path='/lab4' element={<CheckoutForm />}></Route>
           <Route path='/contact' element={<OrchidContact />}></Route>
+          <Route path='/detail/:id' element={<OrchidDetails />}></Route>
+          <Route path='/naturals' element={<OrchidNaturalPresentation />}></Route>
+          <Route path='/lab4' element={<CheckoutForm />}></Route>
         </Routes>
       </AuthProvider>
       <Footer />
