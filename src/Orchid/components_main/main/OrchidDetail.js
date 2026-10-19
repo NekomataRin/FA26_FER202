@@ -17,7 +17,7 @@ export default function OrchidDetails() {
     const location = useLocation()
     const backTo = location.state?.from ?? '/' //Trả về link trước đó (/naturals hoặc / aka home)
 
-    const naturalTag = (orchid.isNatural) ? 'natural' : 'badge'
+    const naturalTag = (orchid?.isNatural) ? 'natural' : 'badge'
     return (!user) ?
         (<>
             <div className="container" style={{ backgroundColor: theme.backgroundColor, color: theme.color, borderColor: theme.borderColor }}>

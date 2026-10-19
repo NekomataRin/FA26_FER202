@@ -25,25 +25,31 @@ export default function Navigation() {
                     }}>
                         <li class="nav-item">
                             <Link to="/" style={{ textDecoration: 'none' }}>
-                                <a class="nav-link" style={{
+                                <p class="nav-link" style={{
                                     color: theme.color,
-                                    outline: 'none'
-                                }}>Home</a>
+                                    outline: 'none',
+                                    margin: 'auto',
+                                    paddingTop: '10px'
+                                }}>Home</p>
                             </Link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style={{
+                            <p class="nav-link" style={{
                                 color: theme.color,
-                                outline: 'none'
-                            }}>Checkout</a>
+                                outline: 'none',
+                                margin: 'auto',
+                                paddingTop: '10px'
+                            }}>Checkout</p>
 
                         </li>
                         <li class="nav-item">
                             <Link to="/contact" style={{ textDecoration: 'none' }}> {/* This is for Lab 5, not yet created */}
-                                <a class="nav-link" style={{
+                                <p class="nav-link" style={{
                                     color: theme.color,
-                                    outline: 'none'
-                                }}>Contact</a>
+                                    outline: 'none',
+                                    margin: 'auto',
+                                    paddingTop: '10px'
+                                }}>Contact</p>
                             </Link>
                         </li>
                     </ul>

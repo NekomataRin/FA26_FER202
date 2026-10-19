@@ -84,7 +84,7 @@ export default function CheckoutForm() {
             }
             //Reset toàn bộ giỏ hàng
             case 'clear-cart': {
-                tempState.item = initState
+                tempState.item = {}
                 break
             }
             default: {
@@ -174,7 +174,7 @@ export default function CheckoutForm() {
 
             <h2 style={{ textAlign: 'center' }}>--- Cart ---</h2>
             {cartItems.length === 0 ? (
-                <p style={{ textAlign: 'center' }}> <img src={typhLoading} width='5%' /> Your cart is empty.</p>
+                <p style={{ textAlign: 'center' }}> <img src={typhLoading} width='3%' /> Your cart is empty.</p>
             ) : (
                 <div>
                     <div className="row checkout-head">

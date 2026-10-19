@@ -25,12 +25,13 @@
 
 > ### `Lab 5` 
 
-[━━━━━╌╌╌╌╌] **50%**
+[━━━━━━━━━━] **100%**
 
 ---
 
 ## Changelogs
 #### `Oct 19, 2026`
+- `[17:17]` - Progress on `Lab 5` : `100%` (Need refactoring for `Formik` and `Yup` soon)
 - `[16:42]` - Progress on `Lab 5`: `50%`
 - `[00:19]` - Moved the router for `Lab 4` to `Footer` section... 
 - `[00:11]` - Progress on `Lab 4`: `100%`
