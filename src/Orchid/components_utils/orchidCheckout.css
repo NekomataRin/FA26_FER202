@@ -15,18 +15,10 @@
     border-bottom: 1px solid rgba(128, 128, 128, 0.4);
 }
 
-.checkout-qty {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
 .checkout-summary {
     margin-top: 1rem;
     text-align: right;
 }
-
-.checkout-qty-input { width: 70px; text-align: center; }
 
 .checkout-head {
     padding: 0.5rem 0;

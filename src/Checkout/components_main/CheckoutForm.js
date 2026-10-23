@@ -97,9 +97,11 @@ export default function CheckoutForm() {
     //Formik và Yup
     const [checkOrder, setOrder] = useState(null)
 
+    //Yup Object để Validate giá trị nhập vào form dùng Formik
     const checkoutSchema = Yup.object({
         fullName: Yup.string().trim()
             .min(3, 'Full name must be at least 3 characters')
+            .max(50, 'Full name must be at most 50 characters')
             .required('Full name is required'),
         email: Yup.string().trim()
             .email('Invalid email address')
@@ -115,13 +117,15 @@ export default function CheckoutForm() {
         agreeTerms: Yup.boolean().oneOf([true], 'You must agree to the terms'),
     })
 
+    //Cái này để map cho từng ô nhập liệu
     const textFields = [
-        { name: 'fullName', label: 'Full name', type: 'text' },
+        { name: 'fullName', label: 'Full Name', type: 'text' },
         { name: 'email', label: 'Email', type: 'email' },
         { name: 'phone', label: 'Phone', type: 'tel' },
         { name: 'address', label: 'Address', type: 'text' },
     ]
 
+    //Setup form dùng Formik
     const formik = useFormik({
         initialValues: {
             fullName: "",
@@ -141,11 +145,12 @@ export default function CheckoutForm() {
                 totalQuantity: cart.totalQuantity,
                 totalPrice: cart.totalPrice,
             })
-            dispatch({ type: 'clear-cart' })
+            dispatch({ type: 'clear-cart' }) //Cái này là huỷ toàn bộ giỏ hàng sau khi submit xong
             formik.resetForm()
         }
     })
 
+    //Check lỗi Validation ở Formik
     const hasError = (name) => formik.touched[name] && formik.errors[name]
 
     return (
@@ -160,8 +165,8 @@ export default function CheckoutForm() {
                             <div className="card-body" style={{ textAlign: 'center' }}>
                                 <h3>{item.name}</h3>
                                 <p><strong>Price:</strong> ${item.price}</p>
-                                <button className="btn btn-primary"
-                                    onClick={() => dispatch({ type: 'add-item', payload: item.id })}>
+                                <button className={checkOrder ? "btn btn-secondary" : "btn btn-primary"}
+                                    onClick={() => dispatch({ type: 'add-item', payload: item.id })} disabled={checkOrder}>
                                     <strong>Add to cart</strong>
                                 </button>
                             </div>
@@ -174,7 +179,11 @@ export default function CheckoutForm() {
 
             <h2 style={{ textAlign: 'center' }}>--- Cart ---</h2>
             {cartItems.length === 0 ? (
-                <p style={{ textAlign: 'center' }}> <img src={typhLoading} width='3%' /> Your cart is empty.</p>
+                (!checkOrder) ? (
+                    <p style={{ textAlign: 'center' }}> <img src={typhLoading} width='3%' alt='no data' /> Your cart is empty.</p>
+                ) : (
+                    <p style={{ textAlign: 'center' }}> <img src={typhLoading} width='3%' alt='loading' /> Please review your <strong>Order Receipt</strong> carefully before placing other order.</p>
+                )
             ) : (
                 <div>
                     <div className="row checkout-head">
@@ -205,27 +214,29 @@ export default function CheckoutForm() {
                             </div>
                         </div>
                     ))}
+                    <div className="checkout-summary" style={{ textAlign: 'center' }}>
+                        <p><strong>Total quantity:</strong> {cart.totalQuantity}</p>
+                        <p><strong>Total price:</strong> ${cart.totalPrice}</p>
+                    </div>
                 </div>
             )}
-
-            <div className="checkout-summary" style={{ textAlign: 'center' }}>
-                <p><strong>Total quantity:</strong> {cart.totalQuantity}</p>
-                <p><strong>Total price:</strong> ${cart.totalPrice}</p>
-            </div>
 
             <hr />
 
             {checkOrder ? (
                 <div className="checkout-confirm">
-                    <h2 style={{ textAlign: 'center' }}>Order confirmation</h2>
+                    <h2 style={{ textAlign: 'center' }}>Order Receipt</h2>
                     <hr />
                     <h4>Customer info</h4>
-                    <p><strong>Full name:</strong> {checkOrder.customer.fullName}</p>
-                    <p><strong>Email:</strong> {checkOrder.customer.email}</p>
-                    <p><strong>Phone:</strong> {checkOrder.customer.phone}</p>
-                    <p><strong>Address:</strong> {checkOrder.customer.address}</p>
-                    <p><strong>Payment method:</strong> {checkOrder.customer.paymentMethod}</p>
+                    <div style={{ padding: 'auto', marginLeft: '10px' }}>
+                        <p><strong>Full name:</strong> {checkOrder.customer.fullName}</p>
+                        <p><strong>Email:</strong> {checkOrder.customer.email}</p>
+                        <p><strong>Phone:</strong> {checkOrder.customer.phone}</p>
+                        <p><strong>Address:</strong> {checkOrder.customer.address}</p>
+                        <p><strong>Payment method:</strong> {checkOrder.customer.paymentMethod}</p>
+                    </div>
 
+                    <hr />
                     <h4>Items</h4>
                     <div className="row checkout-head">
                         <div className="col-4">Name</div>
@@ -259,6 +270,10 @@ export default function CheckoutForm() {
                             <input id={f.name} type={f.type}
                                 className={'form-control' + (hasError(f.name) ? ' is-invalid' : '')}
                                 {...formik.getFieldProps(f.name)} />
+                            {/* 
+                                Trải ra thành { name, value, onChange, onBlur } bằng cách dùng method getFieldProps thay cho
+                                name={f.name} value={formik.values[f.name]} onChange={formik.handleChange} onBlur={ormik.handleBlur}
+                            */}
                             {hasError(f.name) && <div className="text-danger small">{formik.errors[f.name]}</div>}
                         </div>
                     ))}

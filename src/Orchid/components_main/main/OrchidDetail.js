@@ -12,7 +12,7 @@ export default function OrchidDetails() {
     const { user } = useContext(AuthContext)
 
     const orchidParam = useParams()
-    const orchid = orchidData.find(e => { return Number(e.Id) === Number(orchidParam.id) })
+    const orchid = orchidData.find(e => { return Number(e.Id) === Number(orchidParam.id)}) ?? orchidData.find(e => { return Number(e.Id) === 1})
 
     const location = useLocation()
     const backTo = location.state?.from ?? '/' //Trả về link trước đó (/naturals hoặc / aka home)

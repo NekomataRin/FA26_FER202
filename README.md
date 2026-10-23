@@ -1,6 +1,6 @@
 # FER202 - Lab Project
 ---
-> Last commited: `Oct 19, 2026` at `16:42`
+> Last commited: `Oct 23, 2026` at `07:05`
 
 > Commited by: `ArichiAya` (Prefered not to show my real name here on GitHub) - `SE201444`
 ---
@@ -30,6 +30,8 @@
 ---
 
 ## Changelogs
+#### `Oct 23, 2026`
+- `[07:04]` - Refactor progress on `Oct 19`, since I was too lazy to push
 #### `Oct 19, 2026`
 - `[17:17]` - Progress on `Lab 5` : `100%` (Need refactoring for `Formik` and `Yup` soon)
 - `[16:42]` - Progress on `Lab 5`: `50%`

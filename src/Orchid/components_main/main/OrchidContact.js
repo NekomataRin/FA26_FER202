@@ -12,9 +12,10 @@ export default function OrchidContact() {
 
     const [contact, setContact] = useState(null)
 
-    const checkoutSchema = Yup.object({
+    const contactSchema = Yup.object({
         fullName: Yup.string().trim()
             .min(3, 'Full name must be at least 3 characters')
+            .max(50, 'Full name must be at most 50 characters')
             .required('Full name is required'),
         email: Yup.string().trim()
             .email('Invalid email address')
@@ -28,7 +29,7 @@ export default function OrchidContact() {
     })
 
     const textFields = [
-        { name: 'fullName', label: 'Full name', type: 'text' },
+        { name: 'fullName', label: 'Full Name', type: 'text' },
         { name: 'email', label: 'Email', type: 'email' },
         { name: 'phone', label: 'Phone', type: 'tel' },
         { name: 'address', label: 'Address', type: 'text' },
@@ -42,7 +43,7 @@ export default function OrchidContact() {
             address: "",
             agreeTerms: false
         },
-        validationSchema: checkoutSchema,
+        validationSchema: contactSchema,
         onSubmit: (values) => {
             setContact({
                 customer: values,

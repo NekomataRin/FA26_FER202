@@ -41,8 +41,8 @@ export default function OrchidNaturalPresentation() {
                                         <h3>{orchid.name}</h3>
                                         <p className="title"><strong>Category:</strong> {orchid.category}</p>
                                         <button className="btn btn-primary">
-                                            <Link to={`/detail/${orchid.Id}`} state={{ from: '/naturals' }}>
-                                                <a className="text-white text-decoration-none"><strong>Detail</strong></a>
+                                            <Link to={`/detail/${orchid.Id}`} state={{ from: '/naturals' }} style={{ textDecoration: 'none', color: 'white' }}>
+                                                <strong>Detail</strong>
                                             </Link>
                                         </button>
                                     </div>
