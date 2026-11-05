@@ -1,6 +1,6 @@
 # FER202 - Lab Project
 ---
-> Last commited: `Oct 23, 2026` at `07:05`
+> Last commited: `Nov 6, 2026` at `06:42`
 
 > Commited by: `ArichiAya` (Prefered not to show my real name here on GitHub) - `SE201444`
 ---
@@ -27,8 +27,12 @@
 
 [━━━━━━━━━━] **100%**
 
----
+> ### `Lab 6` 
 
+[━━━━━━━━━━] **100%**
+---
+## Changelogs
+- `[06:42]` - Refactor progress on `Oct 30`, and the final progress on `Lab 6` is already done.
 ## Changelogs
 #### `Oct 23, 2026`
 - `[07:04]` - Refactor progress on `Oct 19`, since I was too lazy to push

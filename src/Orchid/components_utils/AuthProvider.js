@@ -16,9 +16,12 @@ export default function AuthProvider({ children }) {
         setUsername(user || null)
     }
     const user = (localStorage.getItem('user') === username) ? username : null
-
+    
+    //Admin Usernames
+    const adminList = ['Admin', 'Typhoeus']
+    const isAdmin = adminList.includes(user)
     return (
-        <AuthContext.Provider value={{ username, user, userToggle }}>
+        <AuthContext.Provider value={{ username, user, isAdmin, userToggle }}>
             {children}
         </AuthContext.Provider>
     )

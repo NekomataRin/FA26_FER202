@@ -22,7 +22,9 @@ export default function OrchidContact() {
             .matches(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/, 'Email must have a domain, e.g. name@gmail.com')
             .required('Email is required'),
         phone: Yup.string()
-            .matches(/^(0|\+84)[35789]\d{8}$/, 'Invalid phone number (e.g. 0912345678)')
+            .matches(/[0-9]*$/, 'Phone number must contain only Numbers')
+            .min(10, "Phone number must have 10 or 11 digits")
+            .max(11, "Phone number must have 10 or 11 digits")
             .required('Phone is required'),
         address: Yup.string().trim().required('Address is required'),
         agreeTerms: Yup.boolean().oneOf([true], 'You must agree to the terms'),
@@ -54,35 +56,20 @@ export default function OrchidContact() {
 
     const hasError = (name) => formik.touched[name] && formik.errors[name]
 
-    return (!user) ? (
-        <>
+    if (!user) {
+        return (<>
             <div className="container" style={{ backgroundColor: theme.backgroundColor, color: theme.color, borderColor: theme.borderColor }}>
                 <h1>Please Login To View The Content</h1>
                 <p>It really does feel empty out here...</p>
-                <img class="loginImg" src={loginImg} alt="Typhoeus Wallpaper by 小皮不皮er" />
+                <img className="loginImg" src={loginImg} alt="Typhoeus Wallpaper by 小皮不皮er" />
                 <p>Not really... I guess... Image credits to <strong>小皮不皮er</strong></p>
                 <hr />
             </div>
-        </>
-    ) : (contact) ? (
-        <>
-            <div className="checkout-confirm">
-                <h2 style={{ textAlign: 'center' }}>Contact Information</h2>
-                <hr />
-                <h4>Customer info</h4>
-                <hr />
-                <div style={{ textAlign: 'left', margin: 'auto', paddingLeft: '10px' }}>
-                    <p><strong>Full name:</strong> {contact.customer.fullName}</p>
-                    <p><strong>Email:</strong> {contact.customer.email}</p>
-                    <p><strong>Phone:</strong> {contact.customer.phone}</p>
-                    <p><strong>Address:</strong> {contact.customer.address}</p>
-                </div>
-                <button className="btn btn-primary" onClick={() => setContact(null)}>
-                    Submit Other Info
-                </button>
-            </div>
-        </>) :
-        (<>
+        </>)
+    }
+
+    if (!contact) {
+        return (<>
             <div className='container'>
                 <form className="checkout-form" onSubmit={formik.handleSubmit} noValidate >
                     <h2 style={{ textAlign: 'center' }}>---Contact---</h2>
@@ -115,4 +102,23 @@ export default function OrchidContact() {
                 </form >
             </div >
         </>)
+    } else {
+        return (<>
+            <div className="checkout-confirm">
+                <h2 style={{ textAlign: 'center' }}>Contact Information</h2>
+                <hr />
+                <h4>Customer info</h4>
+                <hr />
+                <div style={{ textAlign: 'left', margin: 'auto', paddingLeft: '10px' }}>
+                    <p><strong>Full name:</strong> {contact.customer.fullName}</p>
+                    <p><strong>Email:</strong> {contact.customer.email}</p>
+                    <p><strong>Phone:</strong> {contact.customer.phone}</p>
+                    <p><strong>Address:</strong> {contact.customer.address}</p>
+                </div>
+                <button className="btn btn-primary" onClick={() => setContact(null)}>
+                    Submit Other Info
+                </button>
+            </div>
+        </>)
+    }
 }

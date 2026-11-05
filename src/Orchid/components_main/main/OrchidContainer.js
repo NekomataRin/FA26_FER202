@@ -9,19 +9,20 @@ export default function Orchid() {
     const { theme } = useContext(ThemeContext)
     const { user } = useContext(AuthContext)
 
-    return (!user) ? (
-        <>
+    if (!user) {
+        return (<>
             <div className="container" style={{ backgroundColor: theme.backgroundColor, color: theme.color, borderColor: theme.borderColor }}>
                 <h1>Please Login To View The Content</h1>
                 <p>It really does feel empty out here...</p>
-                <img class="loginImg" src={loginimg} alt="Typhoeus Wallpaper by 小皮不皮er" />
+                <img className="loginImg" src={loginimg} alt="Typhoeus Wallpaper by 小皮不皮er" />
                 <p>Not really... I guess... Image credits to <strong>小皮不皮er</strong></p>
                 <hr />
             </div>
-        </>
-    ) : (
-        <>
+        </>)
+    } else {
+        return (<>
             <OrchidPresentation />
-        </>
-    )
+        </>)
+    }
+
 }

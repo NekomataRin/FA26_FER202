@@ -13,7 +13,7 @@ export default function CheckoutForm() {
     //useReducer Task
     /**
      * initState: Lưu trữ các thứ cần làm cho useReducer ứng với các hành động cần làm
-     * item: lưu trữ Quantity của từng itemId một, để tránh việc append vô tội vạ trong 1 array khiến nó
+     * item: Object lưu trữ Quantity của từng itemId một, để tránh việc append vô tội vạ trong 1 array khiến nó
      * rất dài và cực kì khó chịu khi xử lí
      * totalQuantity, totalPrice: Đây là yêu cầu của đề bài btw 
      */
@@ -108,7 +108,9 @@ export default function CheckoutForm() {
             .matches(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/, 'Email must have a domain, e.g. name@gmail.com')
             .required('Email is required'),
         phone: Yup.string()
-            .matches(/^(0|\+84)[35789]\d{8}$/, 'Invalid phone number (e.g. 0912345678)')
+            .matches(/[0-9]*$/, 'Phone number must contain only Numbers')
+            .min(10, "Phone number must have 10 or 11 digits")
+            .max(11, "Phone number must have 10 or 11 digits")
             .required('Phone is required'),
         address: Yup.string().trim().required('Address is required'),
         paymentMethod: Yup.string()
